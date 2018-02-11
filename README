@@ -25,6 +25,13 @@ Emscripten install:
 export EMSCRIPTEN_SDK_HOME=/home/manuel/emsdk-portable/
 ./make-emake.sh
 
+Prebuild drivers:
+==============
+
+If you just want to use a driver you can directly include it from github.io e.g.
+
+<script type="text/javascript" src="https://manuelb.github.io/sane-backend-emscripten/javascript-driver/backend/libs/libsane-plustek.so.1.0.27.js" />
+
 Quick install:
 ==============
 
