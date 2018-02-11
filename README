@@ -19,6 +19,12 @@ There are several graphical frontends available for SANE, see the list at
 http://www.sane-project.org/sane-frontends.html.
 
 
+Emscripten install:
+==============
+
+export EMSCRIPTEN_SDK_HOME=/home/manuel/emsdk-portable/
+./make-emake.sh
+
 Quick install:
 ==============
 
