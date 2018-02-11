@@ -48,9 +48,7 @@
 #endif
 #include <string.h>
 #include <stdarg.h>
-#ifdef HAVE_VSYSLOG
 #include <syslog.h>
-#endif
 #ifdef HAVE_OS2_H
 #include <sys/types.h>
 #endif
@@ -64,6 +62,7 @@
 # include <os2.h>
 #endif
 
+#define LOG_DEBUG 3
 #define BACKEND_NAME sanei_debug
 #include "../include/sane/sanei_debug.h"
 

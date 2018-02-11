@@ -2,6 +2,7 @@
 
 #ifndef HAVE_VSYSLOG
 
+#include <syslog.h>
 #include <stdio.h>
 #include <stdarg.h>
 

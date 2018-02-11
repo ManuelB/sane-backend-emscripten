@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 
-void syslog(int priority, const char *format, va_list args)
+/*void syslog(int priority, const char *format, va_list args)
 {
     printf("%d ", priority);
     printf(format, args);
-}
+}*/
 
 #endif

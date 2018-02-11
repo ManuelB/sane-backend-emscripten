@@ -4,7 +4,7 @@
 
 /* generated with epson2usb.pl doc/descriptions/epson2.desc */
 
-SANE_Word sanei_epson_usb_product_ids[] = {
+SANE_Word sanei_epson2_usb_product_ids[] = {
   0x101, /* GT-7000U, Perfection 636U */
   0x103, /* GT-6600U, Perfection 610 */
   0x104, /* GT-7600U, GT-7600UF, Perfection 1200U, Perfection 1200U PHOTO */
@@ -178,7 +178,7 @@ SANE_Word sanei_epson_usb_product_ids[] = {
 };
 
 int
-sanei_epson_getNumberOfUSBProductIds (void)
+sanei_epson2_getNumberOfUSBProductIds (void)
 {
-  return sizeof (sanei_epson_usb_product_ids) / sizeof (SANE_Word);
+  return sizeof (sanei_epson2_usb_product_ids) / sizeof (SANE_Word);
 }

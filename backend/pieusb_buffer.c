@@ -190,7 +190,6 @@ sanei_pieusb_buffer_create(struct Pieusb_Read_Buffer* buffer, SANE_Int width, SA
 	perror("sanei_pieusb_buffer_create(): error writing a byte at the end of the file");
         return SANE_STATUS_IO_ERROR;
     }
-#ifdef HAVE_MMAP
     /* Create memory map */
     buffer->data = mmap(NULL, buffer_size_bytes, PROT_WRITE | PROT_READ, MAP_SHARED, buffer->data_file, 0);
     if (buffer->data == MAP_FAILED) {
@@ -199,9 +198,6 @@ sanei_pieusb_buffer_create(struct Pieusb_Read_Buffer* buffer, SANE_Int width, SA
         perror("sanei_pieusb_buffer_create(): error mapping file");
         return SANE_STATUS_INVAL;
     }
-#else
-#error mmap(2) not available, aborting
-#endif
     buffer->data_size = buffer_size_bytes;
     /* Reading and writing */
     buffer->p_read = calloc(buffer->colors, sizeof(SANE_Uint*));
@@ -237,11 +233,7 @@ sanei_pieusb_buffer_create(struct Pieusb_Read_Buffer* buffer, SANE_Int width, SA
 void
 sanei_pieusb_buffer_delete(struct Pieusb_Read_Buffer* buffer)
 {
-#ifdef HAVE_MMAP
     munmap(buffer->data, buffer->data_size);
-#else
-#error mmap(2) not available, aborting
-#endif
     /* ftruncate(buffer->data_file,0); Can we delete given a file-descriptor? */
     close(buffer->data_file);
     /* remove fs entry */
